@@ -36,7 +36,7 @@ class ModelDB {
             }
         })
             .then(() => {
-                return this.#model._findById(id);
+                return this.#model.findById(id);
             });
     }
 
