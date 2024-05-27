@@ -104,16 +104,16 @@ class Routing {
     _patch() {
         return (req, res) => {
             return this.modelDB._updateFields(req.params.id, req.body)
-            .then((response) => {
-                return res.status(200).json(response);  
-            })
-            .catch((err) => {
-                console.error(err.message);
-                return res.status(500).json({
-                    code: 'internal_error',
-                    message: 'Internal Error'
+                .then((response) => {
+                    return res.status(200).json(response);  
+                })
+                .catch((err) => {
+                    console.error(err.message);
+                    return res.status(500).json({
+                        code: 'internal_error',
+                        message: 'Internal Error'
+                    });
                 });
-            });
         }
     }
 

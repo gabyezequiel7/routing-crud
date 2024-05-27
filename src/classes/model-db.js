@@ -34,7 +34,10 @@ class ModelDB {
             $set: {
                 body
             }
-        });
+        })
+            .then(() => {
+                return this.#model._findById(id);
+            });
     }
 
     _delete(id) {
