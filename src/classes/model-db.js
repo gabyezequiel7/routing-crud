@@ -24,19 +24,19 @@ class ModelDB {
     _updateOne(id, body) {
         return this.#model.updateOne({
             _id: id
-        }, body);
+        }, body)
+            .then(() => {
+                return this.#model.findById(id);
+            });
     }
 
     _updateFields(id, body) {
-        return this.#model.updateOne({
-            _id: id
-        }, {
-            $set: {
-                body
-            }
-        })
-            .then(() => {
-                return this.#model.findById(id);
+        return this.#model.findById(id)
+            .then((doc) => {
+                for (const field of Object.keys(body)) {
+                    doc[field] = body[field];
+                }
+                return doc.save();
             });
     }
 
