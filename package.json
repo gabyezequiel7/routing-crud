@@ -1,5 +1,5 @@
 {
-  "name": "routing-crud-mongo",
+  "name": "routing-crud",
   "version": "1.0.0",
   "description": "Generation of routes from mongoose models to perform CRUD operations",
   "main": "app.js",
