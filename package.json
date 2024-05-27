@@ -1,0 +1,19 @@
+{
+  "name": "routing-crud-mongo",
+  "version": "1.0.0",
+  "description": "Generation of routes from mongoose models to perform CRUD operations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gabyezequiel7",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "eslint": "^9.3.0",
+    "express": "^4.19.2",
+    "install": "^0.13.0",
+    "mongoose": "^8.4.0",
+    "pluralize": "^8.0.0"
+  }
+}
