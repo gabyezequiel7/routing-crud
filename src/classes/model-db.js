@@ -31,12 +31,13 @@ class ModelDB {
     }
 
     _updateFields(id, body) {
-        return this.#model.findById(id)
-            .then((doc) => {
-                for (const field of Object.keys(body)) {
-                    doc[field] = body[field];
-                }
-                return doc.save();
+        return this.#model.updateOne({
+            _id: id
+        }, {
+            $set: body
+        })
+            .then(() => {
+                return this.#model.findById(id);
             });
     }
 
